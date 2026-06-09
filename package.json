@@ -1,24 +1,41 @@
 {
-  "name": "escritorio-agentes-terminal",
+  "name": "ai-agent-office",
+  "displayName": "AI Agent Office",
   "version": "1.0.0",
-  "description": "TUI para simular um escritório de agentes de IA no terminal.",
-  "main": "index.js",
+  "description": "Escritorio visual pixel art de agentes de IA dentro do VS Code.",
+  "publisher": "local",
+  "main": "./src/extension.js",
+  "engines": {
+    "vscode": "^1.90.0",
+    "node": ">=18"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:aiAgentOffice.openOffice"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "aiAgentOffice.openOffice",
+        "title": "AI Agent Office: Abrir Escritório"
+      }
+    ]
+  },
   "scripts": {
-    "start": "node index.js"
+    "compile": "node --check src/extension.js && node --check media/office.js",
+    "test": "npm run compile"
   },
   "keywords": [
-    "tui",
-    "terminal",
-    "agentes",
-    "ia",
-    "blessed"
+    "vscode",
+    "extension",
+    "webview",
+    "pixel-art",
+    "agents"
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "blessed": "^0.1.81"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

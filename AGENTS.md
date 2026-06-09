@@ -1,29 +1,31 @@
-# Escritório de Agentes de IA
+# AI Agent Office
 
-Projeto Node.js de terminal/TUI para simular um escritório de agentes de IA.
+Extensao do VS Code com Webview pixel art para simular um escritorio de agentes de IA.
 
 Stack:
 - Node.js
-- blessed
-- JSON local em `data/database.json`
-- Sem React, sem navegador, sem Vite e sem servidor web
+- VS Code Extension API
+- Webview com HTML, CSS e JavaScript puro
+- Persistencia via `localStorage` da Webview
+- Sem React, sem navegador externo, sem localhost, sem Vite e sem servidor web
 
 ## Como Rodar
 
 ```bash
 npm install
-npm start
+npm run compile
 ```
+
+Depois abrir no VS Code, pressionar F5 e executar o comando `AI Agent Office: Abrir Escritório`.
 
 ## Convenções Do Projeto
 
-- A aplicação roda exclusivamente no terminal.
-- A entrada principal é `index.js`.
-- A orquestração fica em `src/app.js`.
-- A interface TUI fica em `src/ui.js`.
-- Agentes ficam em `src/agents.js`.
-- Tarefas ficam em `src/tasks.js`.
-- Persistência fica em `src/database.js`.
+- A aplicacao roda exclusivamente dentro do VS Code como Webview.
+- A entrada da extensao fica em `src/extension.js`.
+- A interface fica em `media/office.html`, `media/office.css` e `media/office.js`.
+- Nao criar servidor local.
+- Nao abrir navegador externo.
+- Nao adicionar React/Vite para esta versao.
 - Não versionar `node_modules/`.
 - Manter `package-lock.json` versionado.
 
@@ -40,7 +42,7 @@ Qualidade e revisão:
 Node.js:
 - `.agnostic-core/skills/nodejs/nodejs-patterns.md`
 
-UX/TUI e interface:
+UX/Webview e interface:
 - `.agnostic-core/skills/frontend/ux-guidelines.md`
 - `.agnostic-core/skills/frontend/accessibility.md`
 
@@ -60,6 +62,6 @@ IA/LLM, quando aplicável:
 ## Checklist Antes De Finalizar
 
 - Rodar `node --check` nos arquivos alterados.
-- Rodar `npm start` quando a mudança afetar inicialização ou UI.
+- Rodar `npm run compile` quando a mudanca afetar inicializacao ou UI.
 - Conferir `git status --short`.
-- Não commitar alterações de runtime em `data/database.json` sem necessidade explícita.
+- Nao commitar arquivos gerados sem necessidade explicita.

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'none'; img-src {{cspSource}} data:; style-src {{cspSource}} 'unsafe-inline'; script-src 'nonce-{{nonce}}';"
+  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Office</title>
+  <link rel="stylesheet" href="{{cssUri}}">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar" aria-label="Cabecalho do escritorio">
+      <div>
+        <p class="eyebrow">VS Code Webview</p>
+        <h1>AI Agent Office</h1>
+      </div>
+      <div class="office-status" id="officeStatus">5 agentes online</div>
+    </header>
+
+    <section class="stage" aria-label="Escritorio pixel art">
+      <div class="zoom-controls" aria-label="Controles de zoom">
+        <button class="pixel-button square" id="zoomIn" type="button" aria-label="Aumentar zoom">+</button>
+        <button class="pixel-button square" id="zoomOut" type="button" aria-label="Diminuir zoom">-</button>
+      </div>
+
+      <div class="room-viewport">
+        <div class="room-scale" id="roomScale">
+          <div class="room" id="officeRoom" aria-label="Sala de agentes de IA">
+            <div class="wall wall-top"></div>
+            <div class="wall wall-left"></div>
+            <div class="wall wall-right"></div>
+            <div class="wall wall-bottom"></div>
+
+            <div class="floor floor-wood"></div>
+            <div class="floor floor-blue"></div>
+            <div class="floor floor-checker"></div>
+
+            <div class="rug"></div>
+            <div class="board furniture">ROADMAP</div>
+            <div class="clock furniture">12:00</div>
+            <div class="shelf shelf-a furniture"></div>
+            <div class="shelf shelf-b furniture"></div>
+            <div class="sofa furniture"></div>
+            <div class="plant plant-a furniture"></div>
+            <div class="plant plant-b furniture"></div>
+            <div class="plant plant-c furniture"></div>
+
+            <div id="workstations"></div>
+            <div id="agentsLayer"></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="bottom-menu" aria-label="Menu do escritorio">
+        <button class="pixel-button" id="addAgentButton" type="button">+ Agent</button>
+        <button class="pixel-button" id="logoutButton" type="button">Logout</button>
+        <button class="pixel-button" id="settingsButton" type="button">Settings</button>
+      </nav>
+    </section>
+
+    <aside class="agent-panel" id="agentPanel" aria-live="polite" aria-label="Painel do agente">
+      <div class="empty-panel">
+        <span class="panel-icon">▣</span>
+        <h2>Selecione um agente</h2>
+        <p>Clique em um personagem no escritorio para ver tarefa, progresso e logs.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div class="modal-backdrop hidden" id="agentModal" role="dialog" aria-modal="true" aria-labelledby="agentModalTitle">
+    <form class="modal pixel-card" id="agentForm">
+      <div class="modal-header">
+        <h2 id="agentModalTitle">Novo agente</h2>
+        <button class="icon-button" id="closeAgentModal" type="button" aria-label="Fechar modal">×</button>
+      </div>
+
+      <label>
+        Nome
+        <input id="agentName" name="agentName" required maxlength="32" autocomplete="off">
+      </label>
+
+      <label>
+        Função
+        <input id="agentRole" name="agentRole" required maxlength="56" autocomplete="off">
+      </label>
+
+      <label>
+        Prompt/base de comportamento
+        <textarea id="agentPrompt" name="agentPrompt" rows="4" required></textarea>
+      </label>
+
+      <label>
+        Tarefa inicial
+        <input id="agentTask" name="agentTask" required maxlength="72" autocomplete="off">
+      </label>
+
+      <button class="pixel-button primary" type="submit">Salvar agente</button>
+    </form>
+  </div>
+
+  <div class="toast hidden" id="toast" role="status"></div>
+
+  <script nonce="{{nonce}}" src="{{jsUri}}"></script>
+</body>
+</html>
