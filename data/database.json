@@ -1,0 +1,66 @@
+{
+  "agents": [
+    {
+      "id": "c3ffbd7a-1275-4693-ba93-7a0cd9964e60",
+      "name": "Agente Pesquisador",
+      "role": "Pesquisa e coleta de contexto",
+      "icon": "🔎",
+      "status": "Aguardando",
+      "currentTaskId": null,
+      "progress": 0,
+      "lastLog": "Pronto para receber tarefas.",
+      "createdAt": "2026-06-09T20:19:42.075Z"
+    },
+    {
+      "id": "433bcdf6-1ec5-4944-9d8d-18390ca2bb1a",
+      "name": "Agente Programador",
+      "role": "Implementação de código",
+      "icon": "💻",
+      "status": "Aguardando",
+      "currentTaskId": null,
+      "progress": 0,
+      "lastLog": "Pronto para receber tarefas.",
+      "createdAt": "2026-06-09T20:19:42.077Z"
+    },
+    {
+      "id": "cff42cea-d3ff-465d-b5d9-153e57807ebf",
+      "name": "Agente Designer",
+      "role": "Experiência visual e interface",
+      "icon": "🎨",
+      "status": "Aguardando",
+      "currentTaskId": null,
+      "progress": 0,
+      "lastLog": "Pronto para receber tarefas.",
+      "createdAt": "2026-06-09T20:19:42.077Z"
+    },
+    {
+      "id": "5cff4af3-cde0-45a2-abae-f0873ba9ceb2",
+      "name": "Agente Revisor",
+      "role": "Qualidade, testes e revisão",
+      "icon": "✅",
+      "status": "Aguardando",
+      "currentTaskId": null,
+      "progress": 0,
+      "lastLog": "Pronto para receber tarefas.",
+      "createdAt": "2026-06-09T20:19:42.077Z"
+    },
+    {
+      "id": "8f553098-de9c-465b-af9b-d4268a7ff128",
+      "name": "Agente Gestor",
+      "role": "Planejamento e coordenação",
+      "icon": "📋",
+      "status": "Aguardando",
+      "currentTaskId": null,
+      "progress": 0,
+      "lastLog": "Pronto para receber tarefas.",
+      "createdAt": "2026-06-09T20:19:42.078Z"
+    }
+  ],
+  "tasks": [],
+  "logs": [
+    {
+      "time": "17:19:42",
+      "message": "Sistema iniciado."
+    }
+  ]
+}
